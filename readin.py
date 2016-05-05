@@ -3,10 +3,11 @@ from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 
-access_token="3593527217-25yitR0zDZYuzXCqBI8PsCyDiktZdLf5tCqZwKp"
-access_token_secret="iR15KFLGuGufU7zppeS4m3nIgadbblKtPMaNWFhszCouE"
-consumer_key="7VCqUQnAvWZHGpzzZHsXhCe78"
-consumer_secret="1yfKvbz2LA1f74bbqhBDL8N5oTDhAjTHyK3nudkZsn3QwgiqZd"
+#set up the key to access to the Twitter API Screaming
+access_token="YOUR ACCESS TOKEN"
+access_token_secret="YOUR ACCESS TOKEN SECRET"
+consumer_key="YOUR CONSUMER KEY"
+consumer_secret="YOUR CONSUMER SECRET"
 
 class StdOutListener(StreamListener):
 
