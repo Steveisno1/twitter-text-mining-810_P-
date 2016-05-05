@@ -1,0 +1,220 @@
+{
+  "axes": [
+    {
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": "#gospursgo",
+          "val": 12325
+        },
+        {
+          "col": "data",
+          "idx": "#spurs",
+          "val": 7316
+        },
+        {
+          "col": "data",
+          "idx": "#nbaplayoffs",
+          "val": 4716
+        },
+        {
+          "col": "data",
+          "idx": "#thunder",
+          "val": 2921
+        },
+        {
+          "col": "data",
+          "idx": "#spursnation",
+          "val": 2130
+        },
+        {
+          "col": "data",
+          "idx": "#okcvssas",
+          "val": 1291
+        },
+        {
+          "col": "data",
+          "idx": "#spursvsthunder",
+          "val": 1276
+        },
+        {
+          "col": "data",
+          "idx": "#spursvthunder",
+          "val": 1251
+        },
+        {
+          "col": "data",
+          "idx": "#nba",
+          "val": 970
+        },
+        {
+          "col": "data",
+          "idx": "#tarheeltriple",
+          "val": 859
+        },
+        {
+          "col": "data",
+          "idx": "#okc",
+          "val": 670
+        },
+        {
+          "col": "data",
+          "idx": "#thunderup",
+          "val": 612
+        },
+        {
+          "col": "data",
+          "idx": "#whcd",
+          "val": 579
+        },
+        {
+          "col": "data",
+          "idx": "#nbanosportv",
+          "val": 516
+        },
+        {
+          "col": "data",
+          "idx": "#",
+          "val": 500
+        },
+        {
+          "col": "data",
+          "idx": "#nhldraftlottery",
+          "val": 495
+        },
+        {
+          "col": "data",
+          "idx": "#pbconfox",
+          "val": 464
+        },
+        {
+          "col": "data",
+          "idx": "#5wordlietoyourspouse",
+          "val": 411
+        },
+        {
+          "col": "data",
+          "idx": "#ihear",
+          "val": 388
+        },
+        {
+          "col": "data",
+          "idx": "#nbaextra",
+          "val": 380
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
